@@ -1,0 +1,4 @@
+
+storia;5.0;era facile
+mate;3.0;no
+mate;6.0;no
