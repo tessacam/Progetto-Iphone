@@ -1,6 +1,18 @@
 import java.util.*;
 
+/**
+ * Gioco per testare la velocità di reazione dell'utente.
+ *
+ * @author tessa caminada
+ * @version gennaio 2025
+ */
 class mainReactionGame {
+
+    /**
+     * Avvia il gioco di reazione.
+     * Il gioco mostra un messaggio casuale e l'utente deve premere il tasto ENTER nel minor tempo possibile.
+     * Il tempo di reazione viene poi misurato e il punteggio viene assegnato.
+     */
     public void avviaReactionGame() {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();

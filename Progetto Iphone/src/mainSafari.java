@@ -1,6 +1,15 @@
 import java.util.*;
-
+/**
+ * un'applicazione che simula safari con siti e articoli
+ *
+ * @author tessa caminada
+ * @version gennaio 2025
+ */
 public class mainSafari {
+    /**
+     * avvia l'app Safari e stampa gli articoli
+     */
+
     public static void avviaSafari() {
         // elenco dei siti con titoli e contenuti
         Map<String, List<String>> siti = new HashMap<>();
@@ -159,7 +168,7 @@ public class mainSafari {
             if (input.equalsIgnoreCase("esci")) {
                 System.out.println("Grazie di aver navigato su Internet, ciao!");
                 return;
-                
+
             }
 
             if (siti.containsKey(input)) {
@@ -203,6 +212,6 @@ public class mainSafari {
                 System.out.println("Sito non trovato! Riprova.");
             }
         }
-        
+
     }
 }

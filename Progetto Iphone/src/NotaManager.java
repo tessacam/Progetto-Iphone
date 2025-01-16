@@ -1,3 +1,9 @@
+/**
+ * gestisce l'archiviazione e il recupero delle note da un file
+ *
+ * @author tessa caminada
+ * @version gennaio 2025
+ */
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -8,20 +14,33 @@ import java.util.List;
 public class NotaManager {
     private String filePath;
 
-        public NotaManager(String filePath) {
-            this.filePath = filePath;
-        }
+    /**
+     * crea un gestore per le note, specificando il percorso del file dove salvarle e caricarle
+     *
+     * @param filePath il percorso del file per il salvataggio delle note
+     */
+    public NotaManager(String filePath) {
+        this.filePath = filePath;
+    }
 
-        // Salva una singola nota nel file
-        public void salvaNota(Nota nota) {
-            try (FileWriter writer = new FileWriter(filePath, true)) {
-                writer.write(nota.getMateria() + ";" + nota.getVoto() + ";" + nota.getDescrizione() + "\n");
-            } catch (IOException e) {
-                System.out.println("errore durante il salvataggio della nota: " + e.getMessage());
-            }
+    /**
+     * salva una singola nota nel file
+     *
+     * @param nota la nota da salvare
+     */
+    public void salvaNota(Nota nota) {
+        try (FileWriter writer = new FileWriter(filePath, true)) {
+            writer.write(nota.getMateria() + ";" + nota.getVoto() + ";" + nota.getDescrizione() + "\n");
+        } catch (IOException e) {
+            System.out.println("errore durante il salvataggio della nota: " + e.getMessage());
         }
+    }
 
-    // carica tutte le note dal file note_scolastiche.txt
+    /**
+     * carica tutte le note da un file txt
+     *
+     * @return una lista di note caricate dal file
+     */
     public List<Nota> caricaNote() {
 
         List<Nota> note = new ArrayList<>();
@@ -42,4 +61,5 @@ public class NotaManager {
         return note;
     }
 }
+
 

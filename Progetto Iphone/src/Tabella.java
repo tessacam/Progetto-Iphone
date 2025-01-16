@@ -1,5 +1,12 @@
 import java.util.Scanner;
 
+/**
+ * classe che simula un telefono che permette di aprire 6 app
+ * l'utente può scegliere un'app da usare tramite un numero, oppure spegnere il dispositivo
+ *
+ * @author Tessa Caminada
+ * @version gennaio 2025
+ */
 public class Tabella {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -10,8 +17,6 @@ public class Tabella {
                 {"whatsapp", "kindle"},
                 {"reaction", "scuola"}
         };
-
-        System.out.println("benvenuto/a nel tuo telefono");
 
         try {
             Thread.sleep(2000);
@@ -53,63 +58,55 @@ public class Tabella {
             System.out.println("6. scuola");
             System.out.println("7. spegni");
 
-
             System.out.print("numero app:  ");
 
+            int scelta1 = scanner.nextInt();
+            scanner.nextLine();
 
+            if (scelta1 < 1 || scelta1 > 7) {
+                System.out.println("scelta non valida, riprova");
+                continue;
+            }
 
+            switch (scelta1) {
+                case 1:
+                    mainSpotify spotify = new mainSpotify();
+                    spotify.avviaSpotify();
+                    break;
+                case 2:
+                    mainSafari safari = new mainSafari();
+                    safari.avviaSafari();
+                    break;
+                case 3:
+                    mainWhatsapp whatsapp = new mainWhatsapp();
+                    whatsapp.avviaWhatsapp();
+                    break;
+                case 4:
+                    mainKindle kindle = new mainKindle();
+                    kindle.avviaKindle();
+                    break;
+                case 5:
+                    mainReactionGame reaction = new mainReactionGame();
+                    reaction.avviaReactionGame();
+                    break;
+                case 6: // scuola
+                    mainScuola scuola = new mainScuola();
+                    scuola.avviaScuola(scanner); // Passa lo stesso scanner
+                    break;
+                case 7:
+                    System.out.println("hai scelto di spegnere il telefono. Grazie e alla prossima!");
 
-                int scelta1 = scanner.nextInt();
-                scanner.nextLine();
+                    try {
+                        Thread.sleep(1500);
+                    } catch (InterruptedException e) {
+                        System.out.println("errore durante l'attesa");
+                    }
 
+                    System.out.println("spegnimento...");
 
-                if (scelta1 < 1 || scelta1 > 7) {
-                    System.out.println("scelta non valida, riprova");
-                    continue;
-                }
-
-                switch (scelta1) {
-                    case 1:
-                        mainSpotify spotify = new mainSpotify();
-                        spotify.avviaSpotify();
-                        break;
-                    case 2:
-                        mainSafari safari = new mainSafari();
-                        safari.avviaSafari();
-                        break;
-                    case 3:
-                        mainWhatsapp whatsapp = new mainWhatsapp();
-                        whatsapp.avviaWhatsapp();
-                        break;
-                    case 4:
-                        mainKindle kindle = new mainKindle();
-                        kindle.avviaKindle();
-                        break;
-                    case 5:
-                        mainReactionGame reaction = new mainReactionGame();
-                        reaction.avviaReactionGame();
-                        break;
-                    case 6: // scuola
-                        mainScuola scuola = new mainScuola();
-                        scuola.avviaScuola(scanner); // Passa lo stesso scanner
-                        break;
-                    case 7:
-                        System.out.println("hai scelto di spegnere il telefono. Grazie e alla prossima!");
-
-
-                        try {
-                            Thread.sleep(1500);
-                        } catch (InterruptedException e) {
-                            System.out.println("errore durante l'attesa");
-                        }
-
-                        System.out.println("spegnimento...");
-
-                        scanner.close();
-                        return;
-                }
+                    scanner.close();
+                    return;
             }
         }
     }
-
-
+}

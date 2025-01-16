@@ -1,6 +1,18 @@
 import java.util.Scanner;
 
+/**
+ * Simula l'applicazione Kindle dove l'utente può sfogliare e acquistare libri.
+ *
+ * @author tessa caminada
+ * @version gennaio 2025
+ */
 class mainKindle {
+
+    /**
+     * Avvia l'applicazione Kindle.
+     * L'utente può scegliere un libro dalla libreria e acquistarlo.
+     * Dopo aver visualizzato i libri, l'utente può decidere se continuare a scegliere libri o uscire dall'applicazione.
+     */
     public void avviaKindle() {
 
         Libreria libreria = new Libreria("");
@@ -18,7 +30,6 @@ class mainKindle {
             String risposta = scanner.nextLine();
 
             if (risposta.equalsIgnoreCase("si")) {
-
 
                 while (true) {
                     System.out.println("ecco i libri disponibili:");
@@ -46,3 +57,4 @@ class mainKindle {
         scanner.close();
     }
 }
+

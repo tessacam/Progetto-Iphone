@@ -1,5 +1,11 @@
 import java.util.Random;
 import java.util.Scanner;
+/**
+ * un'applicazione che simula spotify con venti canzoni
+ *
+ * @author tessa caminada
+ * @version gennaio 2025
+ */
 
 class mainSpotify {
     Scanner scanner = new Scanner(System.in); // Inizializzazione corretta

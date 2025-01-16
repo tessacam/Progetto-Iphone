@@ -1,7 +1,18 @@
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
+/**
+ * un'applicazione per la gestione delle note che si ricevono
+ *
+ * @author tessa caminada
+ * @version gennaio 2025
+ */
 class mainScuola {
+
+    /**
+     * avvia l'app di gestione delle note
+     *
+     * @param scanner Scanner per ricevere input dall'utente
+     */
     public void avviaScuola(Scanner scanner) {
         NotaManager notaManager = new NotaManager("note_scolastiche.txt");
 
